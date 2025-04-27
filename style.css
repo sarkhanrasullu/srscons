@@ -1,0 +1,153 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* Navigation Bar */
+nav {
+  background: #1e293b;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #3b82f6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  padding: 60px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #dbeafe;
+}
+
+/* Sections */
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* About */
+.about p {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.1rem;
+}
+
+/* Games */
+.games {
+  padding: 40px 0;
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.game-card {
+  background: #1e293b;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.game-card h3 {
+  margin: 10px 0 5px;
+  color: #60a5fa;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.contact-button:hover {
+  background: #2563eb;
+}
+
+/* Footer */
+footer {
+  background: #1e293b;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
