@@ -2,77 +2,641 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Privacy Policy - SRS CONS</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SRS CONS LLC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a"><stop offset="0" stop-color="%23ffffff" stop-opacity=".1"/><stop offset="1" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"><animate attributeName="cx" values="200;800;200" dur="20s" repeatCount="indefinite"/></circle><circle cx="800" cy="800" r="150" fill="url(%23a)"><animate attributeName="cy" values="800;200;800" dur="25s" repeatCount="indefinite"/></circle></svg>') center/cover;
+            pointer-events: none;
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        .animate-delay-1 { animation-delay: 0.2s; }
+        .animate-delay-2 { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .privacy-section {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid #dee2e6;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .last-updated {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .table-of-contents {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .table-of-contents li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .table-of-contents li:last-child {
+            border-bottom: none;
+        }
+
+        .table-of-contents a {
+            text-decoration: none;
+            color: #495057;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #667eea;
+        }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .right-item {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .right-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .right-item i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-
 <!-- Navigation -->
-<nav>
-    <div class="container nav-container">
-        <div class="logo">🎮 SRS CONS</div>
-        <ul class="nav-links">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/support.html">Support</a></li>
-            <li><a href="/policy.html">Privacy Policy</a></li>
-            <li><a href="/terms-and-conditions.html">Terms and Conditions</a></li>
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="/">
+            <i class="bi bi-building"></i> SRS CONS LLC
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/support.html">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/policy.html">Privacy Policy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/terms.html">Terms</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
-<!-- Header -->
-<header>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p>Effective Date: April 27, 2025</p>
+<!-- Hero Section -->
+<section class="hero-gradient text-white" style="padding-top: 100px;">
+    <div class="container py-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <div class="section-icon animate-fade-in animate-delay-1">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <h1 class="display-4 fw-bold mb-4 animate-fade-in animate-delay-1">
+                    Privacy Policy
+                </h1>
+                <p class="lead mb-4 animate-fade-in animate-delay-2">
+                    Your privacy and data security are our top priorities. Learn how we protect and use your information across all SRS CONS LLC services.
+                </p>
+                <div class="last-updated animate-fade-in animate-delay-2">
+                    <i class="bi bi-calendar-check"></i> Last Updated: April 27, 2025
+                </div>
+            </div>
+        </div>
     </div>
-</header>
+</section>
+
+<!-- Table of Contents -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="table-of-contents">
+                    <h4 class="mb-3"><i class="bi bi-list-ul"></i> Table of Contents</h4>
+                    <ul>
+                        <li><a href="#introduction">1. Introduction</a></li>
+                        <li><a href="#information-collected">2. Information We Collect</a></li>
+                        <li><a href="#how-we-use">3. How We Use Your Information</a></li>
+                        <li><a href="#third-party">4. Third-Party Services</a></li>
+                        <li><a href="#data-security">5. Data Security</a></li>
+                        <li><a href="#your-rights">6. Your Rights</a></li>
+                        <li><a href="#children-privacy">7. Children's Privacy</a></li>
+                        <li><a href="#policy-changes">8. Changes to This Policy</a></li>
+                        <li><a href="#contact">9. Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Privacy Policy Content -->
-<section class="privacy container">
-    <h2>Introduction</h2>
-    <p>Welcome to SRS CONS! We are committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our websites, games, and services.</p>
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
 
-    <h2>Information We Collect</h2>
-    <ul>
-        <li><strong>Personal Information:</strong> Name, email address, contact information (only if you provide it to us).</li>
-        <li><strong>Usage Data:</strong> Information about how you interact with our games and website.</li>
-        <li><strong>Device Information:</strong> Device type, operating system, browser type, IP address.</li>
-    </ul>
+                <!-- Introduction -->
+                <div id="introduction" class="privacy-section">
+                    <h2 class="gradient-text mb-3">1. Introduction</h2>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <p class="mb-3">Welcome to SRS CONS LLC! We are committed to protecting your privacy and personal information across all our services, including:</p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-link-45deg text-primary me-2"></i>
+                                        <span>CITOUT.ME (Smart URL shortening)</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-translate text-primary me-2"></i>
+                                        <span>AI YouTube Translation</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-controller text-primary me-2"></i>
+                                        <span>Gaming Applications</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-globe text-primary me-2"></i>
+                                        <span>Web Services</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0">This Privacy Policy explains how we collect, use, and safeguard your data when you use our websites, games, and services.</p>
+                        </div>
+                    </div>
+                </div>
 
-    <h2>How We Use Your Information</h2>
-    <p>We use the collected data to:</p>
-    <ul>
-        <li>Provide and improve our games and services.</li>
-        <li>Communicate with you regarding updates, news, or support requests.</li>
-        <li>Analyze user behavior to improve user experience.</li>
-    </ul>
+                <!-- Information We Collect -->
+                <div id="information-collected" class="privacy-section">
+                    <h2 class="gradient-text mb-3">2. Information We Collect</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <i class="bi bi-person-circle text-primary display-4 mb-3"></i>
+                                    <h5 class="card-title">Personal Information</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li>• Name and email address</li>
+                                        <li>• Contact information</li>
+                                        <li>• Account credentials</li>
+                                        <li>• Profile information</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <i class="bi bi-graph-up text-primary display-4 mb-3"></i>
+                                    <h5 class="card-title">Usage Data</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li>• How you interact with our services</li>
+                                        <li>• Feature usage patterns</li>
+                                        <li>• Click and navigation data</li>
+                                        <li>• Time spent on services</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <i class="bi bi-phone text-primary display-4 mb-3"></i>
+                                    <h5 class="card-title">Device Information</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li>• Device type and model</li>
+                                        <li>• Operating system</li>
+                                        <li>• Browser type and version</li>
+                                        <li>• IP address and location</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <h2>Third-Party Services</h2>
-    <p>We may use third-party services (such as Google Analytics, Ad networks, Payment processors) that may collect information according to their privacy policies. We are not responsible for the privacy practices of third parties.</p>
+                <!-- How We Use Your Information -->
+                <div id="how-we-use" class="privacy-section">
+                    <h2 class="gradient-text mb-3">3. How We Use Your Information</h2>
+                    <div class="highlight-box">
+                        <h5 class="mb-3"><i class="bi bi-gear-fill text-primary"></i> We use the collected data to:</h5>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex">
+                                    <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                    <span>Provide and improve our games and services</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex">
+                                    <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                    <span>Process URL shortening and translation requests</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex">
+                                    <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                    <span>Communicate updates, news, or support</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex">
+                                    <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                    <span>Analyze usage to improve user experience</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex">
+                                    <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                    <span>Generate analytics and insights</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex">
+                                    <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                    <span>Ensure security and prevent fraud</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <h2>Data Security</h2>
-    <p>We implement appropriate security measures to protect your personal data from unauthorized access, alteration, or disclosure.</p>
+                <!-- Third-Party Services -->
+                <div id="third-party" class="privacy-section">
+                    <h2 class="gradient-text mb-3">4. Third-Party Services</h2>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="alert alert-info border-0">
+                                <i class="bi bi-info-circle me-2"></i>
+                                <strong>Important:</strong> We may use third-party services that collect information according to their own privacy policies.
+                            </div>
+                            <p class="mb-3">Third-party services we may use include:</p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-google text-danger me-2"></i>
+                                        <span>Google Analytics (Usage tracking)</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-credit-card text-primary me-2"></i>
+                                        <span>Payment processors (Billing)</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-cloud text-info me-2"></i>
+                                        <span>Cloud hosting services</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-envelope text-success me-2"></i>
+                                        <span>Email service providers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0"><strong>Note:</strong> We are not responsible for the privacy practices of third parties. Please review their privacy policies independently.</p>
+                        </div>
+                    </div>
+                </div>
 
-    <h2>Your Rights</h2>
-    <p>You have the right to access, correct, or delete your personal information. You can contact us at <a href="mailto:privacy@srscons.com">privacy@srscons.com</a> to exercise these rights.</p>
+                <!-- Data Security -->
+                <div id="data-security" class="privacy-section">
+                    <h2 class="gradient-text mb-3">5. Data Security</h2>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <h5><i class="bi bi-shield-check text-success"></i> Security Measures</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <i class="bi bi-lock-fill text-primary me-2"></i>
+                                            SSL/TLS encryption for data in transit
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-server text-primary me-2"></i>
+                                            Secure cloud infrastructure
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-key-fill text-primary me-2"></i>
+                                            Strong password requirements
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-eye-slash-fill text-primary me-2"></i>
+                                            Regular security audits
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><i class="bi bi-exclamation-triangle text-warning"></i> Our Commitment</h5>
+                                    <p>We implement appropriate technical and organizational security measures to protect your personal data from:</p>
+                                    <ul>
+                                        <li>Unauthorized access</li>
+                                        <li>Data alteration or corruption</li>
+                                        <li>Unauthorized disclosure</li>
+                                        <li>Accidental loss</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <h2>Children's Privacy</h2>
-    <p>Our games and services are not intended for children under 13 years of age. We do not knowingly collect personal information from children.</p>
+                <!-- Your Rights -->
+                <div id="your-rights" class="privacy-section">
+                    <h2 class="gradient-text mb-3">6. Your Rights</h2>
+                    <p class="mb-4">You have the following rights regarding your personal information:</p>
+                    <div class="rights-grid">
+                        <div class="right-item">
+                            <i class="bi bi-eye"></i>
+                            <h6>Access</h6>
+                            <p class="small mb-0">Request access to your personal data</p>
+                        </div>
+                        <div class="right-item">
+                            <i class="bi bi-pencil"></i>
+                            <h6>Correct</h6>
+                            <p class="small mb-0">Update or correct inaccurate information</p>
+                        </div>
+                        <div class="right-item">
+                            <i class="bi bi-trash"></i>
+                            <h6>Delete</h6>
+                            <p class="small mb-0">Request deletion of your data</p>
+                        </div>
+                        <div class="right-item">
+                            <i class="bi bi-download"></i>
+                            <h6>Portability</h6>
+                            <p class="small mb-0">Export your data in a readable format</p>
+                        </div>
+                        <div class="right-item">
+                            <i class="bi bi-pause-circle"></i>
+                            <h6>Restrict</h6>
+                            <p class="small mb-0">Limit how we process your data</p>
+                        </div>
+                        <div class="right-item">
+                            <i class="bi bi-x-circle"></i>
+                            <h6>Object</h6>
+                            <p class="small mb-0">Object to certain data processing</p>
+                        </div>
+                    </div>
+                    <div class="alert alert-primary border-0 mt-3">
+                        <i class="bi bi-envelope me-2"></i>
+                        To exercise these rights, contact us at <a href="mailto:privacy@srscons.com" class="alert-link">privacy@srscons.com</a>
+                    </div>
+                </div>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We encourage you to review it periodically. Your continued use of our services after updates means you agree to the revised policy.</p>
+                <!-- Children's Privacy -->
+                <div id="children-privacy" class="privacy-section">
+                    <h2 class="gradient-text mb-3">7. Children's Privacy</h2>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="alert alert-warning border-0">
+                                <i class="bi bi-shield-exclamation me-2"></i>
+                                <strong>Age Restriction:</strong> Our services are not intended for children under 13 years of age.
+                            </div>
+                            <p class="mb-3">We take children's privacy seriously:</p>
+                            <ul>
+                                <li>We do not knowingly collect personal information from children under 13</li>
+                                <li>If we become aware that we have collected such information, we will delete it promptly</li>
+                                <li>Parents who believe their child has provided us with personal information should contact us immediately</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:privacy@srscons.com">privacy@srscons.com</a>.</p>
+                <!-- Policy Changes -->
+                <div id="policy-changes" class="privacy-section">
+                    <h2 class="gradient-text mb-3">8. Changes to This Policy</h2>
+                    <div class="highlight-box">
+                        <h5><i class="bi bi-arrow-repeat text-primary"></i> Policy Updates</h5>
+                        <p class="mb-3">We may update this Privacy Policy from time to time to reflect:</p>
+                        <ul class="mb-3">
+                            <li>Changes in our services or business practices</li>
+                            <li>Legal or regulatory requirements</li>
+                            <li>Industry best practices</li>
+                        </ul>
+                        <div class="alert alert-info border-0 mb-0">
+                            <i class="bi bi-bell me-2"></i>
+                            We encourage you to review this policy periodically. Your continued use of our services after updates means you agree to the revised policy.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Us -->
+                <div id="contact" class="privacy-section">
+                    <h2 class="gradient-text mb-3">9. Contact Us</h2>
+                    <div class="contact-card">
+                        <h4 class="mb-3"><i class="bi bi-envelope-heart"></i> Get in Touch</h4>
+                        <p class="mb-4">If you have any questions about this Privacy Policy or our data practices, we're here to help!</p>
+                        <div class="row g-3 text-start">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-envelope-fill me-2"></i>
+                                    <div>
+                                        <strong>Privacy Questions:</strong><br>
+                                        <a href="mailto:privacy@srscons.com" class="text-white">privacy@srscons.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-headset me-2"></i>
+                                    <div>
+                                        <strong>General Support:</strong><br>
+                                        <a href="mailto:support@srscons.com" class="text-white">support@srscons.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="mb-0">
+                                <i class="bi bi-clock"></i> We aim to respond to all privacy inquiries within 48 hours
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Footer -->
-<footer>
+<footer class="bg-dark text-white py-4">
     <div class="container">
-        <p>&copy; 2025 SRS CONS. All rights reserved.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <h5><i class="bi bi-building"></i> SRS CONS LLC</h5>
+                <p class="text-muted">Technology solutions and digital services</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <div class="mb-2">
+                    <a href="/" class="text-white me-3">Home</a>
+                    <a href="/support.html" class="text-white me-3">Support</a>
+                    <a href="/terms.html" class="text-white me-3">Terms</a>
+                </div>
+                <p class="text-muted small">© 2025 SRS CONS LLC. All rights reserved.</p>
+            </div>
+        </div>
     </div>
 </footer>
+
+<script>
+    // Smooth scrolling for table of contents links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add active class to current section in table of contents
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('[id]');
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const correspondingLink = document.querySelector(`a[href="#${sectionId}"]`);
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                document.querySelectorAll('.table-of-contents a').forEach(link => {
+                    link.style.color = '#495057';
+                    link.style.fontWeight = '500';
+                });
+                if (correspondingLink) {
+                    correspondingLink.style.color = '#667eea';
+                    correspondingLink.style.fontWeight = 'bold';
+                }
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
